@@ -31,7 +31,7 @@
 ### **2. Esquema do Circuito**
 
 - **Captura de Tela do Circuito no Logisim:**
-  <img src="MemoriaRam.png" alt="memoria-ram-completo" />
+  <img src="Imagens/MemoriaRam.png" alt="memoria-ram-completo" />
   *Legenda: Circuito da memória RAM com 8 registradores e multiplexador implementado no Logisim.*
 
 - **Descrição do Esquema:**
@@ -75,15 +75,15 @@
 | \(ADDR\_READ = 101\), \(READ = 1\)             | Ler do registrador 5     | \(Q\)         | \(00000000\)                         |
 
 #### **Captura de Tela do Resultado**
-<img src="TesteEscritaRam.png" alt="teste-de-escrita-na-memoria-ram" />
+<img src="Imagens/TesteEscritaRam.png" alt="teste-de-escrita-na-memoria-ram" />
 
   *Legenda: Testes realizados no circuito para escrita no registrador 3 no Logisim.*
 
-<img src="TesteLeituraRam.png" alt="teste-de-leitura-na-memoria-ram" />
+<img src="Imagens/TesteLeituraRam.png" alt="teste-de-leitura-na-memoria-ram" />
 
   *Legenda: Teste realizado no circuito para leitura do registrador 3 no Logisim.*
   
-<img src="TesteIsolamentoRam.png" alt="teste-de-isolamento-na-memoria-ram" />
+<img src="Imagens/TesteIsolamentoRam.png" alt="teste-de-isolamento-na-memoria-ram" />
 
   *Legenda: Teste realizado no circuito para leitura do registrador 5 no Logisim.*
 #### **Análise dos Resultados**
