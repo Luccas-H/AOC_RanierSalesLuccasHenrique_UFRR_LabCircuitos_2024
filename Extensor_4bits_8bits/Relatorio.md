@@ -24,7 +24,9 @@
 ### **2. Esquema do Circuito**
 
 - **Captura de Tela do Circuito no Logisim:**
-  <img src="Imagens/EsquemaTransformacao.png" alt="extensor-4bits-para-8bits" />
+  
+  <img src="Imagens/EsquemaExtensao.png" alt="extensor-4bits-para-8bits" />
+  
   *Legenda: Extensor de sinal de 4 bits para 8 bits no Logisim.*
 
 - **Descrição do Esquema:**
@@ -71,15 +73,19 @@
 
 #### **Captura de Tela do Resultado**
 - **Teste 1:** \(IN = 0000\), \(OUT = 00000000\)
-  <img src="Imagens/EsquemaTransformacao.png" alt="extensor-4bits-para-8bits" />
+ 
+  <img src="Imagens/EsquemaExtensao.png" alt="extensor-4bits-para-8bits" />
 
 - **Teste 2:** \(IN = 0111\), \(OUT = 00000111\)
+  
   ![Teste 2](./Imagens/extensor-teste2.png)
 
 - **Teste 3:** \(IN = 1000\), \(OUT = 11111000\)
+  
   ![Teste 3](./Imagens/extensor-teste3.png)
 
 - **Teste 4:** \(IN = 1111\), \(OUT = 11111111\)
+  
   ![Teste 4](./Imagens/extensor-teste4.png)
 
 #### **Análise dos Resultados**
@@ -88,5 +94,5 @@
 
 ---
 
-Relatório elaborado por: **[Seu Nome]**  
-Última atualização: **[Data]**
+Relatório elaborado por: **Ranier Sales e Luccas Henrique**  
+Última atualização: **08/12/2024**
