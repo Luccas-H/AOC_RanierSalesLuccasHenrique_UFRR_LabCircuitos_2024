@@ -12,10 +12,10 @@
   | Pino              | Nome/Função       | Descrição                                   |
   |-------------------|-------------------|-------------------------------------------|
   | Entrada  | Entrada Binária   | Apresenta 2 entradas A e B |
-  | Saída `S`         | Saída | Indica se A e B são distintos, retornando 1 caso verdadeiro. |
+  | Saída `S`         | Saída | Indica se A e B são distintos, retornando 1 caso verdadeiro |
 
 - **Função Lógica:**
-  - O circuito é composto por portas 2 portas AND, 1 porta OR e dois inversores.
+  - O circuito é composto por portas 2 portas AND, 1 porta OR e dois inversores;
   - Com os inversores intercalados na entrada da porta AND, o resultado dessa comparação é enviado para porta OR e por fim vai para a saída.
 ---
 
@@ -46,10 +46,10 @@
 - **Entradas, Conexões e Saídas Esperadas:**
   | Entrada A           |  Entrada B    | Saída Esperada (`S`) | Descrição                |
   |---------------------|--------------------|----------------------|--------------------------|
-  | `0`                 | `0`                  | `0`                  | Ambas entradas 0, falso.  |
+  | `0`                 | `0`                  | `0`                  | Ambas entradas 0, falso  |
   | `0`                 | `1`                  | `1`                  | Uma entrada (A) 1, verdadeiro |
   | `1`                 | `0`                  | `1`                  | Uma entrada (B) 1, verdadeiro |
-  | `1`                 | `1`                  | `0`                  | Ambas entradas 0, falso.  |
+  | `1`                 | `1`                  | `0`                  | Ambas entradas 0, falso  |
 
 ---
 
