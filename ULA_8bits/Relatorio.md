@@ -169,5 +169,5 @@
 ---
 
 Relatório elaborado por: **Ranier Sales e Luccas Henrique**  
-Última atualização:* *09/12/2024*  
+Última atualização: *09/12/2024*  
 
