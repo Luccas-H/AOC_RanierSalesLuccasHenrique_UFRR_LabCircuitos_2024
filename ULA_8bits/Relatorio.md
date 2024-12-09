@@ -7,7 +7,7 @@
 ### 1. Descrição do Componente
 
 - **Descrição Geral:**  
-  A Unidade Lógica e Aritmética (ULA) é um componente digital responsável por realizar operações lógicas e aritméticas em circuitos computacionais. Ela processa dois conjuntos de dados de entrada (A e B), seleciona a operação com base em um seletor (4 bits), e fornece um resultado na saída, além de sinais auxiliares, como *carryout*. Este relatório aborda as operações AND, OR, NOT, NOR, NAND, XOR, deslocamento de bits (SHIFT) e operações aritméticas (soma e subtração).
+  A Unidade Lógica e Aritmética (ULA) é um componente digital responsável por realizar operações lógicas e aritméticas em circuitos computacionais. Ela processa dois conjuntos de dados de entrada (A e B), seleciona a operação com base em um seletor (4 bits), e fornece um resultado na saída, além de sinais auxiliares, como *carryin* e *carryout*. Este relatório aborda as operações AND, OR, NOT, NOR, NAND, XOR, deslocamento de bits (SHIFT) e operações aritméticas (soma e subtração).
 
 - **Pinos e Lógica do Componente:**  
 
@@ -15,12 +15,13 @@
   |------|-----------------------|-----------------------------------------------------------|
   | 1    | Entrada A             | Primeiro conjunto de dados (8 bits).                      |
   | 2    | Entrada B             | Segundo conjunto de dados (8 bits).                       |
-  | 3    | Seletor    | Sinal de controle que seleciona a operação (4 bits).      |
+  | 3    | Seletor    | Sinal de controle que seleciona a operação (4 bits).                 |
   | 4    | Resultado             | Saída com o resultado da operação selecionada (8 bits).   |
+  | 5    | Carry In              | Utilizado no bloco de soma.                               |
   | 5    | Carry Out             | Indica *carry* em operações de soma/subtração.            |
 
 - **Função Lógica:**  
-  As operações realizadas são selecionadas com base no **código de controle (OpCode)**:
+  As operações realizadas são selecionadas com base no **seletor**:
 
   | Código de Operação (4 bits) | Operação        | Descrição                                      |
   |-----------------------------|-----------------|------------------------------------------------|
@@ -42,12 +43,58 @@
 
 ### 2. Esquema do Circuito
 
-- **Captura de Tela do Circuito em Logisim:**  
-  ![Esquema do Circuito](Imagens/ULA_cicuito_completo.png)  
-  *Legenda:* Este esquema mostra a ULA implementada no Logisim com entradas (A e B), seletores de operação, e a saída.
+- **Captura de Tela do Circuito em Logisim:**
+  
+  ![Esquema do Circuito](Imagens/ULA_circuito_completo.png)  
+  *Legenda:* Este esquema mostra a ULA implementada no Logisim com entradas (A e B), seletor de operação, e a saída.
 
 - **Descrição do Esquema:**  
-  O circuito foi montado no Logisim utilizando multiplexadores para selecionar a operação com base no código de controle. Os blocos individuais implementam operações específicas, como soma/subtração (usando somadores completos), e portas lógicas para AND, OR, NOR, etc. Os deslocadores de bits são implementados com registradores de deslocamento.
+  O circuito foi montado no Logisim utilizando um multiplexador para selecionar a operação com base no seletor. Os blocos individuais implementam operações específicas, como soma/subtração/shiftl/shiftr, além de conter portas lógicas como AND, OR, NOR, etc.
+
+- **Esquema dos Multiplexadores:**
+  
+  ![Esquema do Circuito](Imagens/Multiplexadores/ULA_mux_16x1x8.png)
+  *Legenda:* Multiplexador de 16x1 utilizado para selecionar a operação desejada por meio de seu seletor de 4 bits.
+- **Descrição do Esquema:**
+  Para o desenvolvimento da ULA foi necessário criar um multiplexador de 16x1, no entanto para cria-lo é preciso desenvolver primeiramente os multiplexadores abaixo.
+  
+- **Multiplexador 2x1:**
+
+  ![Esquema do Circuito](Imagens/Multiplexadores/ULA_mux_2x1.png)
+
+  *Legenda:* Multiplexador de 2x1 com duas entradas 1 bit que será usado para criar o multiplexador com duas entradas de 8 bits cada.
+  
+- **Multiplexador 2x1 8 bits:**
+  
+  ![Esquema do Circuito](Imagens/Multiplexadores/ULA_mux_2x1x8.png)
+  *Legenda:* Incrementa a entrada e saída de 8 bits utilizando o mux 2x1.
+  
+- **Multiplexador 4x1:**
+  
+  ![Esquema do Circuito](Imagens/Multiplexadores/ULA_mux_4x1x8.png)
+  *Legenda:* Aqui estamos evoluindo cada vez mais o número de entradas e como consequência o próprio seletor.
+  
+- **Multiplexador 8x1:**
+  
+  ![Esquema do Circuito](Imagens/Multiplexadores/ULA_mux_8x1x8.png)
+  *Legenda:* Último mux necessário para desenvolver o mux 16x1.
+
+- **Para saber mais sobre os multiplexadores clique no link: https://github.com/RanierSales/AOC_RanierSalesLuccasHenrique_UFRR_LabCircuitos_2024./tree/main/Multiplexador**
+    
+
+- **Esquema do Subtrator:**
+
+  ![Esquema do Circuito](Imagens/Subtrator/ULA_subtrator.png)
+  
+  *Legenda:* Subtrator responsável por realizar a operação A - B na ULA.
+- **Descrição do Esquema:**
+  Este esquema funciona a partir de duas entradas de 8 bits que serão manipuladas por um subtrator de 1 bit. Vale lembra que caso o numero seja negativo o carryout será igual 0, de maneira analoga, caso subtração positiva o carryout será igual a 1.
+
+- **Subtrator de 1bit:**
+  
+  ![Esquema do Circuito](Imagens/Subtrator/ULA_subtrator_1bit.png)
+  
+  *Legenda:* Subtrator de duas entradas e uma saída de 1 bit, que será utilizado no bloco do subtrator.
 
 ---
 
@@ -60,22 +107,22 @@
 
 - **Entradas, Conexões e Saídas Esperadas:**  
 
-  | Pino de Entrada | Sinal Aplicado        | Código de Operação | Pino de Saída | Resultado Esperado |
+  | Pino de Entrada A | Pino de Entrada B    | Seletor          | Pino de Saída | Resultado Esperado |
   |-----------------|-----------------------|--------------------|---------------|---------------------|
-  | A = 00000101    | B = 00000100          | 0000 (AND)         | Saída         |            |
-  | A = 00000101    | B = 00000100          | 0001 (OR)          | Saída         | 11101110           |
-  | A = 00000101    | B = 00000100          | 0010 (NOT)         | Saída         | 00110011           |
-  | A = 00000101    | B = 00000100          | 0100 (NOR)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 0101 (NAND)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 0110 (XOR)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 1100 (Subtrator)        | Saída         | 01110110           |
+  | A = 00000101    | B = 00000100          | 0000 (AND)        | Saída         | 00000100           |
+  | A = 00000101    | B = 00000100          | 0001 (OR)         | Saída         | 00000101           |
+  | A = 00000101    | B = 00000100          | 0010 (NOT A)      | Saída         | 11111010           |
+  | A = 00000101    | B = 00000100          | 0100 (NOR)        | Saída         | 11111010           |
+  | A = 00000101    | B = 00000100          | 0101 (NAND)       | Saída         | 11111011           |
+  | A = 00000101    | B = 00000100          | 0110 (XOR)        | Saída         | 00000001           |
+  | A = 00000101    | B = 00000100          | 1100 (Subtrator)  | Saída         | 00000001           |
 
 #### Configuração do Logisim
 
 - **Configurações Utilizadas:**  
-  - Entradas A e B conectadas a *Switches*.  
-  - Código de operação controlado por uma entrada de 4 bits.  
-  - Saída conectada a *Probes* para visualização dos resultados.  
+  - Entradas A e B conectadas a um multiplexador de 16x1.  
+  - Seletor controlado por uma entrada de 4 bits.  
+  - Saída de 8 bits.  
 
 ---
 
@@ -83,17 +130,18 @@
 
 - **Resultados Obtidos no Logisim:**  
 
- | Pino de Entrada | Sinal Aplicado        | Código de Operação | Pino de Saída | Resultado Esperado |
+ | Pino de Entrada A | Pino de Entrada B    | Seletor           | Pino de Saída | Resultado Obtidos |
   |-----------------|-----------------------|--------------------|---------------|---------------------|
-  | A = 00000101    | B = 00000100          | 0000 (AND)         | Saída         |            |
-  | A = 00000101    | B = 00000100          | 0001 (OR)          | Saída         | 11101110           |
-  | A = 00000101    | B = 00000100          | 0010 (NOT)         | Saída         | 00110011           |
-  | A = 00000101    | B = 00000100          | 0100 (NOR)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 0101 (NAND)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 0110 (XOR)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 1100 (Subtrator)        | Saída         | 01110110           |
+  | A = 00000101    | B = 00000100          | 0000 (AND)        | Saída         | 00000100           |
+  | A = 00000101    | B = 00000100          | 0001 (OR)         | Saída         | 00000101           |
+  | A = 00000101    | B = 00000100          | 0010 (NOT A)      | Saída         | 11111010           |
+  | A = 00000101    | B = 00000100          | 0100 (NOR)        | Saída         | 11111010           |
+  | A = 00000101    | B = 00000100          | 0101 (NAND)       | Saída         | 11111011           |
+  | A = 00000101    | B = 00000100          | 0110 (XOR)        | Saída         | 00000001           |
+  | A = 00000101    | B = 00000100          | 1100 (Subtrator)  | Saída         | 00000001           |
 
-- **Captura de Tela dos Testes:**  
+- **Captura de Tela dos Testes:**
+   
   ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_and.jpg)  
   *Legenda:* Operação A AND B.
   
@@ -110,7 +158,7 @@
   *Legenda:* Operação A NAND B.
 
   ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_xor.jpg)  
-  *Legenda:* Operação NOT A XOR B.
+  *Legenda:* Operação A XOR B.
 
   ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_subtrator.jpg)  
   *Legenda:* Operação A - B.
@@ -120,6 +168,6 @@
 
 ---
 
-*Relatório elaborado por:* *[Seu Nome/Equipe]*  
-*Última atualização:* *[09/12/2024]*  
-"""
+Relatório elaborado por: **Ranier Sales e Luccas Henrique**  
+Última atualização: *09/12/2024*  
+
