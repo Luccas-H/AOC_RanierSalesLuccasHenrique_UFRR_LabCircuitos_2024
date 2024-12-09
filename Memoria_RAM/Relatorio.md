@@ -51,9 +51,9 @@
 - **Entradas, Conexões e Saídas Esperadas:**
   | Pino de Entrada | Sinal Aplicado   | Pino de Saída | Resultado Esperado |
   |-----------------|------------------|---------------|---------------------|
-  | \(D = 00100111\), \(ADDR = 010\), \(WRITE = 1\) | Escrever no registrador 2 | Não aplicável | Valor \(00100111\) armazenado no registrador 2 |
-  | \(ADDR\_READ = 010\), \(READ = 1\)             | Ler do registrador 2      | \(Q\)         | \(00100111\)                         |
-  | \(ADDR\_READ = 011\), \(READ = 1\)             | Ler do registrador 3      | \(Q\)         | \(00000000\)                         |
+  | \(D = 10101001\), \(ADDR = 011\), \(WRITE = 1\) | Escrever no registrador 3 | Não aplicável | Valor \(10101001\) armazenado no registrador 3 |
+  | \(ADDR\_READ = 011\), \(READ = 1\)             | Ler do registrador 3      | \(Q\)         | \(10101001\)                         |
+  | \(ADDR\_READ = 101\), \(READ = 1\)             | Ler do registrador 5      | \(Q\)         | \(00000000\)                         |
 
 ---
 
@@ -70,21 +70,26 @@
 #### **Resultados Obtidos no Logisim**
 | Pino de Entrada | Sinal Aplicado   | Pino de Saída | Resultado Obtido |
 |-----------------|------------------|---------------|------------------|
-| \(D = 00100111\), \(ADDR = 010\), \(WRITE = 1\) | Escrever no registrador 2 | Não aplicável | Valor \(00100111\) armazenado no registrador 2 |
-| \(ADDR\_READ = 010\), \(READ = 1\)             | Ler do registrador 2      | \(Q\)         | \(00100111\)                         |
-| \(ADDR\_READ = 011\), \(READ = 1\)             | Ler do registrador 3      | \(Q\)         | \(00000000\)                         |
+| \(D = 10101001\), \(ADDR = 011\), \(WRITE = 1\) | Escrever no registrador 3 | Não aplicável | Valor \(10101001\) armazenado no registrador 3 |
+| \(ADDR\_READ = 011\), \(READ = 1\)             | Ler do registrador 3      | \(Q\)         | \(10101001\)                         |
+| \(ADDR\_READ = 101\), \(READ = 1\)             | Ler do registrador 5     | \(Q\)         | \(00000000\)                         |
 
 #### **Captura de Tela do Resultado**
 <img src="TesteEscritaRam.png" alt="teste-de-escrita-na-memoria-ram" />
-*Legenda: Testes realizados no circuito para escrita no registrador 3 no Logisim.*
+
+  *Legenda: Testes realizados no circuito para escrita no registrador 3 no Logisim.*
 
 <img src="TesteLeituraRam.png" alt="teste-de-leitura-na-memoria-ram" />
-*Legenda: Teste realizado no circuito para leitura do registrador 3 no Logisim.*
 
+  *Legenda: Teste realizado no circuito para leitura do registrador 3 no Logisim.*
+  
+<img src="TesteIsolamentoRam.png" alt="teste-de-isolamento-na-memoria-ram" />
+
+  *Legenda: Teste realizado no circuito para leitura do registrador 5 no Logisim.*
 #### **Análise dos Resultados**
-- **Escrita:** O valor \(00100111\) foi armazenado corretamente no registrador 2 quando \(WRITE = 1\).
-- **Leitura:** O valor armazenado no registrador 2 foi lido corretamente com \(READ = 1\) e \(ADDR\_READ = 010\).
-- **Isolamento:** O registrador 3 (não afetado pela escrita) retornou \(00000000\), confirmando o isolamento entre registradores.
+- **Escrita:** O valor \(10101001\) foi armazenado corretamente no registrador 3 quando \(WRITE = 1\).
+- **Leitura:** O valor armazenado no registrador 3 foi lido corretamente com \(READ = 1\) e \(ADDR\_READ = 010\).
+- **Isolamento:** O registrador 5 (não afetado pela escrita) retornou \(00000000\), confirmando o isolamento entre registradores.
 
 ---
 
