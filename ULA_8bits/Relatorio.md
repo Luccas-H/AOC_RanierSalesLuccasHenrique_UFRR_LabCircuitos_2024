@@ -43,7 +43,7 @@
 ### 2. Esquema do Circuito
 
 - **Captura de Tela do Circuito em Logisim:**  
-  ![Esquema do Circuito](URL_DA_IMAGEM_DO_CIRCUITO)  
+  ![Esquema do Circuito](Imagens/ULA_cicuito_completo.png)  
   *Legenda:* Este esquema mostra a ULA implementada no Logisim com entradas (A e B), seletores de operação, e a saída.
 
 - **Descrição do Esquema:**  
@@ -94,25 +94,25 @@
   | A = 00000101    | B = 00000100          | 1100 (Subtrator)        | Saída         | 01110110           |
 
 - **Captura de Tela dos Testes:**  
-  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_and.png)  
+  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_and.jpg)  
   *Legenda:* Operação A AND B.
   
-  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_or.png)  
+  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_or.jpg)  
   *Legenda:* Operação A OR B.
 
-  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_not.png)  
+  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_not.jpg)  
   *Legenda:* Operação NOT A.
 
-  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_nor.png)  
+  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_nor.jpg)  
   *Legenda:* Operação A NOR B.
 
-  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_nand.png)  
+  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_nand.jpg)  
   *Legenda:* Operação A NAND B.
 
-  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_xor.png)  
+  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_xor.jpg)  
   *Legenda:* Operação NOT A XOR B.
 
-  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_subtrator.png)  
+  ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_subtrator.jpg)  
   *Legenda:* Operação A - B.
 
 - **Análise dos Resultados:**  
