@@ -15,12 +15,13 @@
   |------|-----------------------|-----------------------------------------------------------|
   | 1    | Entrada A             | Primeiro conjunto de dados (8 bits).                      |
   | 2    | Entrada B             | Segundo conjunto de dados (8 bits).                       |
-  | 3    | Seletor    | Sinal de controle que seleciona a operação (4 bits).      |
+  | 3    | Seletor    | Sinal de controle que seleciona a operação (4 bits).                 |
   | 4    | Resultado             | Saída com o resultado da operação selecionada (8 bits).   |
+  | 5    | Carry In              | Utilizado no bloco de soma.                               |
   | 5    | Carry Out             | Indica *carry* em operações de soma/subtração.            |
 
 - **Função Lógica:**  
-  As operações realizadas são selecionadas com base no **código de controle (OpCode)**:
+  As operações realizadas são selecionadas com base no **seletor**:
 
   | Código de Operação (4 bits) | Operação        | Descrição                                      |
   |-----------------------------|-----------------|------------------------------------------------|
@@ -78,8 +79,8 @@
   ![Esquema do Circuito](Imagens/Multiplexadores/ULA_mux_8x1x8.png)
   *Legenda:* Último mux necessário para desenvolver o mux 16x1.
 
-  - **Para saber mais sobre os multiplexadores clique no link abaixo:**
-    LEMBRA DE COLOCAR O LINK DO MULTIPLEX DE 4 ENTRADAS.
+- **Para saber mais sobre os multiplexadores clique no link: https://github.com/RanierSales/AOC_RanierSalesLuccasHenrique_UFRR_LabCircuitos_2024./tree/main/Multiplexador**
+    
 
 - **Esquema do Subtrator:**
 
@@ -106,22 +107,22 @@
 
 - **Entradas, Conexões e Saídas Esperadas:**  
 
-  | Pino de Entrada | Sinal Aplicado        | Código de Operação | Pino de Saída | Resultado Esperado |
+  | Pino de Entrada A | Pino de Entrada B    | Seletor          | Pino de Saída | Resultado Esperado |
   |-----------------|-----------------------|--------------------|---------------|---------------------|
-  | A = 00000101    | B = 00000100          | 0000 (AND)         | Saída         |            |
-  | A = 00000101    | B = 00000100          | 0001 (OR)          | Saída         | 11101110           |
-  | A = 00000101    | B = 00000100          | 0010 (NOT)         | Saída         | 00110011           |
-  | A = 00000101    | B = 00000100          | 0100 (NOR)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 0101 (NAND)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 0110 (XOR)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 1100 (Subtrator)        | Saída         | 01110110           |
+  | A = 00000101    | B = 00000100          | 0000 (AND)        | Saída         | 00000100           |
+  | A = 00000101    | B = 00000100          | 0001 (OR)         | Saída         | 00000101           |
+  | A = 00000101    | B = 00000100          | 0010 (NOT A)      | Saída         | 11111010           |
+  | A = 00000101    | B = 00000100          | 0100 (NOR)        | Saída         | 11111010           |
+  | A = 00000101    | B = 00000100          | 0101 (NAND)       | Saída         | 11111011           |
+  | A = 00000101    | B = 00000100          | 0110 (XOR)        | Saída         | 00000001           |
+  | A = 00000101    | B = 00000100          | 1100 (Subtrator)  | Saída         | 00000001           |
 
 #### Configuração do Logisim
 
 - **Configurações Utilizadas:**  
-  - Entradas A e B conectadas a *Switches*.  
-  - Código de operação controlado por uma entrada de 4 bits.  
-  - Saída conectada a *Probes* para visualização dos resultados.  
+  - Entradas A e B conectadas a um multiplexador de 16x1.  
+  - Seletor controlado por uma entrada de 4 bits.  
+  - Saída de 8 bits.  
 
 ---
 
@@ -129,17 +130,18 @@
 
 - **Resultados Obtidos no Logisim:**  
 
- | Pino de Entrada | Sinal Aplicado        | Código de Operação | Pino de Saída | Resultado Esperado |
+ | Pino de Entrada A | Pino de Entrada B    | Seletor           | Pino de Saída | Resultado Obtidos |
   |-----------------|-----------------------|--------------------|---------------|---------------------|
-  | A = 00000101    | B = 00000100          | 0000 (AND)         | Saída         |            |
-  | A = 00000101    | B = 00000100          | 0001 (OR)          | Saída         | 11101110           |
-  | A = 00000101    | B = 00000100          | 0010 (NOT)         | Saída         | 00110011           |
-  | A = 00000101    | B = 00000100          | 0100 (NOR)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 0101 (NAND)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 0110 (XOR)        | Saída         | 01110110           |
-  | A = 00000101    | B = 00000100          | 1100 (Subtrator)        | Saída         | 01110110           |
+  | A = 00000101    | B = 00000100          | 0000 (AND)        | Saída         | 00000100           |
+  | A = 00000101    | B = 00000100          | 0001 (OR)         | Saída         | 00000101           |
+  | A = 00000101    | B = 00000100          | 0010 (NOT A)      | Saída         | 11111010           |
+  | A = 00000101    | B = 00000100          | 0100 (NOR)        | Saída         | 11111010           |
+  | A = 00000101    | B = 00000100          | 0101 (NAND)       | Saída         | 11111011           |
+  | A = 00000101    | B = 00000100          | 0110 (XOR)        | Saída         | 00000001           |
+  | A = 00000101    | B = 00000100          | 1100 (Subtrator)  | Saída         | 00000001           |
 
-- **Captura de Tela dos Testes:**  
+- **Captura de Tela dos Testes:**
+   
   ![Resultados do Teste](Imagens/ULA-testes/ULA_teste_and.jpg)  
   *Legenda:* Operação A AND B.
   
@@ -166,6 +168,6 @@
 
 ---
 
-*Relatório elaborado por:* *[Seu Nome/Equipe]*  
-*Última atualização:* *[09/12/2024]*  
-"""
+Relatório elaborado por: **Ranier Sales e Luccas Henrique**  
+Última atualização:* *09/12/2024*  
+
