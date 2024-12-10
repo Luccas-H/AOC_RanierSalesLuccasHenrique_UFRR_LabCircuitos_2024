@@ -94,6 +94,7 @@
   - Entrada: Estado Inicial = 0000, CLK = 1  
   - Saída Esperada: Próximo Estado = 0001
     
+  ![Contador Síncrono](Imagens/ContadorSincrono.png)
   <img src="Imagens/ContadorTeste1.png" alt="contador-teste-clockIncial" />
   
   - Resultado Obtido: **Correto**  
@@ -103,6 +104,7 @@
   - Saída Esperada: Próximo Estado = 1000
 
   <img src="Imagens/ContadorTeste2.png" alt="contador-teste-clockIntermediario" />
+  <img src="Imagens/ContadorTeste2_2.png" alt="contador-teste-clockIntermediario" />
 
   - Resultado Obtido: **Correto**  
 
@@ -111,6 +113,7 @@
   - Saída Esperada: Próximo Estado = 0000
     
   <img src="Imagens/ContadorTeste3.png" alt="contador-teste-clock" />
+  ![Contador Síncrono](Imagens/ContadorSincrono.png)
   
   - Resultado Obtido: **Correto**  
 
