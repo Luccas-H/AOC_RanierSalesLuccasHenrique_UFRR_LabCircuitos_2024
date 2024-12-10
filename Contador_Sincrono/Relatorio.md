@@ -17,6 +17,9 @@
   ![Flip-Flop Tipo D](Imagens/FlipFlopD.png)  
   *Legenda: O flip-flop tipo D foi adaptado com um botão de ligar para corrigir inconsistências no estado inicial durante a simulação no Logisim.*  
 
+>[!NOTE]
+>**Para que o circuito do contador funcione é necessário dar um ciclo de clock antes de ligar**
+
 - **Pinos e Lógica do Componente:**  
   | Pino | Nome/Função | Descrição                                     |
   |------|-------------|-----------------------------------------------|
