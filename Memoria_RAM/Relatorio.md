@@ -9,6 +9,91 @@
 - **Descrição Geral:**
   Este componente é uma memória RAM funcional composta por 8 registradores de 8 bits cada. Ele permite realizar operações de leitura e escrita de dados utilizando sinais de controle e endereçamento. Um multiplexador 8x1 é utilizado para selecionar qual registrador será lido. A escrita em um registrador é controlada por um demultiplexador derivado do sinal de controle e do endereço fornecido.
 
+### Componentes do Registrador:
+
+- **Registrador de 1 Bit**
+
+
+  ![Registrador de 1 Bit](https://github.com/RanierSales/AOC_RanierSalesLuccasHenrique_UFRR_LabCircuitos_2024./blob/main/BancoRegistradores_8bits/Imagens/Registradores/Registrador1Bit.png)
+
+  *Legenda:* Circuito básico para armazenar 1 bit utilizando flip-flop tipo SR.
+
+
+- **Registrador de 1 Byte**
+
+
+  ![Registrador de 1 Byte](https://github.com/RanierSales/AOC_RanierSalesLuccasHenrique_UFRR_LabCircuitos_2024./blob/main/BancoRegistradores_8bits/Imagens/Registradores/Registrador1Byte.png)
+
+  *Legenda:* Um registrador de 1 byte formado por 8 flip-flops conectados.
+
+
+- **Enable no Registrador**
+
+
+  ![Enable no Registrador](https://github.com/RanierSales/AOC_RanierSalesLuccasHenrique_UFRR_LabCircuitos_2024./blob/main/BancoRegistradores_8bits/Imagens/Registradores/EnableRegistrador.png)
+
+  *Legenda:* Circuito com controle de habilitação (`Enable`) para decidir se o dado será armazenado ou mantido.
+
+
+- **Registrador Completo**
+
+
+  ![Registrador Completo](https://github.com/RanierSales/AOC_RanierSalesLuccasHenrique_UFRR_LabCircuitos_2024./blob/main/BancoRegistradores_8bits/Imagens/Registradores/RegistradorCompleto.png)
+
+  *Legenda:* Registrador completo com suporte a múltiplos bytes, controlado por sinais de habilitação.
+
+---
+
+- Funcionamento Geral:
+
+1. **Entrada de Dados:**  
+   - Dados são fornecidos ao registrador por meio das entradas de bits.
+   - O número de bits depende do tipo de registrador (1 bit, 1 byte, ou múltiplos bytes).
+
+2. **Habilitação (`Enable`):**  
+   - Controla se os dados de entrada serão armazenados no registrador.
+   - Se desativado, o registrador mantém seu valor atual.
+
+3. **Armazenamento:**  
+   - Os flip-flops mantêm os valores armazenados até que sejam sobrescritos ou redefinidos.
+
+
+- Aplicações dos Registradores: 
+
+   - Armazenamento Temporário:** Mantém dados intermediários em operações digitais.
+   - Controle em Sistemas Digitais:** Usado para armazenar sinais de controle.
+   - Operações em Unidade Lógica e Aritmética (ULA):** Registradores são essenciais para o processamento de dados.
+  
+---
+### Esquema dos Multiplexadores:
+  
+<img src="https://github.com/RanierSales/AOC_RanierSalesLuccasHenrique_UFRR_LabCircuitos_2024./blob/main/ULA_8bits/Imagens/Multiplexadores/ULA_mux_8x1x8.png" />
+
+  *Legenda:* Multiplexador de 8x1 utilizado para selecionar o registrador que será lido na sáida de 8 bits.
+- **Descrição do Esquema:**
+  Para o desenvolvimento do banco de registradores foi necessário criar um multiplexador de 8x1, no entanto para cria-lo é preciso desenvolver primeiramente os multiplexadores abaixo.
+  
+- **Multiplexador 2x1:**
+
+  ![Esquema do Circuito](https://github.com/RanierSales/AOC_RanierSalesLuccasHenrique_UFRR_LabCircuitos_2024./blob/main/ULA_8bits/Imagens/Multiplexadores/ULA_mux_2x1.png)
+
+  *Legenda:* Multiplexador de 2x1 com duas entradas 1 bit que será usado para criar o multiplexador com duas entradas de 8 bits cada.
+  
+- **Multiplexador 2x1 8 bits:**
+  
+  ![Esquema do Circuito](https://github.com/RanierSales/AOC_RanierSalesLuccasHenrique_UFRR_LabCircuitos_2024./blob/main/ULA_8bits/Imagens/Multiplexadores/ULA_mux_2x1x8.png)
+  *Legenda:* Incrementa a entrada e saída de 8 bits utilizando o mux 2x1.
+  
+- **Multiplexador 4x1:**
+  
+  ![Esquema do Circuito](https://github.com/RanierSales/AOC_RanierSalesLuccasHenrique_UFRR_LabCircuitos_2024./blob/main/ULA_8bits/Imagens/Multiplexadores/ULA_mux_4x1x8.png)
+  *Legenda:* Último mux necessário para desenvolver o mux 8x1.
+  
+
+- **Para saber mais sobre os multiplexadores clique no link: https://github.com/RanierSales/AOC_RanierSalesLuccasHenrique_UFRR_LabCircuitos_2024./tree/main/Multiplexador**
+
+---
+
 - **Pinos e Lógica do Componente:**
   | Pino                  | Nome/Função               | Descrição                                             |
   |-----------------------|---------------------------|-----------------------------------------------------|
