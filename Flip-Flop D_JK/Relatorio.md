@@ -6,8 +6,7 @@
 
 ### 1. Descrição do Componente
 
-- *Descrição Geral:*  
-  Os registradores Flip-Flop são usados para armazenar um único bit de informação. Eles operam de acordo com os sinais de entrada e são sincronizados pelo pulso de clock. Os Flip-Flops JK e D tem sua origem atrelada a busca por solucionar limitações e comportamentos indesejados do Flip-Flop RS, como por exemplo o estado proíbido R = 1 / S = 1. O Flip-Flop do tipo *D* (Data Flip-Flop) transfere o valor da entrada \(D\) para a saída \(Q\) no pulso do clock. O Flip-Flop do tipo *JK* é mais versátil, permitindo as operações de *Set*, *Reset*, e *alternância do estado \(comutação\)* dependendo das entradas \(J\) e \(K\).
+- *Descrição Geral:* Os registradores Flip-Flop são usados para armazenar um único bit de informação. Eles operam de acordo com os sinais de entrada e são sincronizados pelo pulso de clock. Os Flip-Flops JK e D tem sua origem atrelada a busca por solucionar limitações e comportamentos indesejados do Flip-Flop RS, como por exemplo o estado proibido R = 1 / S = 1. O Flip-Flop do tipo *D* (Data Flip-Flop) transfere o valor da entrada \(D\) para a saída \(Q\) no pulso do clock. O Flip-Flop do tipo *JK* é mais versátil, permitindo as operações de *Set*, *Reset*, e *alternância do estado \(comutação\)* dependendo das entradas \(J\) e \(K\).
 
 - *Pinos e Lógica do Componente:*
 
@@ -66,7 +65,7 @@
 
 - *Descrição do Esquema Flip-Flop D:*
   
-  Esse circuito é composto por portas lógicas, um bloco RS, uma entrada D e inclui um sinal de clock \(CLK\). Pode ser considerado uma evolução, uma vez que simplifica o funcionamento do Fli-Flop RS reduzindo o número de entradas, assim eliminando o risco de ocorrer o estado proíbido. 
+  Esse circuito é composto por portas lógicas, um bloco RS, uma entrada D e inclui um sinal de clock \(CLK\). Pode ser considerado uma evolução, uma vez que simplifica o funcionamento do Fli-Flop RS reduzindo o número de entradas, assim eliminando o risco de ocorrer o estado proibido. 
   
   - Flip-Flop JK:
 
@@ -75,7 +74,7 @@
 
 - *Descrição do Esquema Flip-Flop JK:*
   
-  Assim como o Flip-Flop D, este circuito também é uma evolução do Flip-Flop RS. Possui duas entradas \(J\) e \(K\) que permite maior controle e evita o estado proíbido.  
+  Assim como o Flip-Flop D, este circuito também é uma evolução do Flip-Flop RS. Possui duas entradas \(J\) e \(K\) que permite maior controle e evita o estado proibido.  
   
 
 ---
