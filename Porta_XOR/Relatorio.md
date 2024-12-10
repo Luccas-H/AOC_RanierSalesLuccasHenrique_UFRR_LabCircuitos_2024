@@ -7,7 +7,7 @@
 ### **1. Descrição do Componente**
 
 - **Descrição Geral:**
-  A porta XOR busca implementar a operação de ou exclusivo. O diferencial dessa porta está na fato de que ao receber duas entradas distintas, ou seja uma entrada verdadeira, resulta em saída verdadeira. Por outro lado ao receber duas entradas iguais a mesma retorna uma saída falsa. 
+  A porta XOR busca implementar a operação de ou exclusivo. O diferencial dessa porta está no fato de que ao receber duas entradas distintas resulta em saída 1. Por outro lado ao receber duas entradas iguais a mesma retorna uma saída 0. 
 - **Pinos e Lógica do Componente:**
   | Pino              | Nome/Função       | Descrição                                   |
   |-------------------|-------------------|-------------------------------------------|
