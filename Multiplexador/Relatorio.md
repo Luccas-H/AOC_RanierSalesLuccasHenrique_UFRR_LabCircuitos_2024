@@ -6,8 +6,7 @@
 
 ### 1. Descrição do Componente
 
-- **Descrição Geral:**  
-  Um multiplexador (MUX) é um componente que seleciona um único sinal de saída dentre várias entradas, baseado em um seletor. Este multiplexador possui quatro entradas \(I0-I3\) e um seletor de dois bits, que determina qual entrada será enviada para a saída.
+- **Descrição Geral:** Um multiplexador (MUX) é um componente que seleciona um único sinal de saída dentre várias entradas, baseado em um seletor. Este multiplexador possui quatro entradas \(I0-I3\) e um seletor de dois bits, que determina qual entrada será enviada para a saída.
 
 - **Pinos e Lógica do Componente:**  
 
